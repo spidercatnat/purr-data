@@ -876,16 +876,19 @@ var canvas_events = (function() {
         },
         normal: function() {
             canvas_events.none();
-
-            document.addEventListener("mousemove", events.mousemove, false);
-            document.addEventListener("touchmove", events.mousemove, false);
+            // Test PointerEvents with new NW.js version.
+            document.addEventListener("pointermove", events.mousemove, false);
+            document.addEventListener("pointerdown", events.mousedown, false);
+            document.addEventListener("pointerup", events.mouseup, false);
+            // document.addEventListener("mousemove", events.mousemove, false);
+            // document.addEventListener("touchmove", events.mousemove, false);
             document.addEventListener("keydown", events.keydown, false);
             document.addEventListener("keypress", events.keypress, false);
             document.addEventListener("keyup", events.keyup, false);
-            document.addEventListener("mousedown", events.mousedown, false);
-            document.addEventListener("touchstart", events.mousedown, false);
-            document.addEventListener("mouseup", events.mouseup, false);
-            document.addEventListener("touchend", events.mouseup, false);
+            // document.addEventListener("mousedown", events.mousedown, false);
+            // document.addEventListener("touchstart", events.mousedown, false);
+            // document.addEventListener("mouseup", events.mouseup, false);
+            // document.addEventListener("touchend", events.mouseup, false);
             state = "normal";
             set_edit_menu_modals(true);
         },
