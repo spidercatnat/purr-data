@@ -9,7 +9,7 @@ nwjspkg = nwjs-sdk-v$(nwjsver)-linux
 
 ifeq ("$(shell dpkg-architecture -qDEB_HOST_ARCH)","armhf")
 arch = arm
-nwjsver = 0.24.5
+nwjsver = 0.46.4
 else ifeq ("$(shell dpkg-architecture -qDEB_HOST_ARCH)","amd64")
 arch = x64
 else
